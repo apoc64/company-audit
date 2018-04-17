@@ -78,4 +78,19 @@ class CompanyTest < Minitest::Test
     expected = {success: false, error: 'bad data'}
     assert_equal expected, company.failure
   end
+
+  def test_it_can_return_employee_from_id
+    company = Company.new
+    actual = company.load_employees('./data/bad_employees.csv')
+    emp1 = company.find_employee_by_id(1)
+    assert_instance_of Employee, emp1
+    assert_equal "Susan Smith", emp1.name
+
+    emp2 = company.find_employee_by_id(2)
+    assert_instance_of Employee, emp2
+    assert_equal "John Smith", emp2.name
+
+    emp2 = company.find_employee_by_id(3)
+    assert_nil emp2
+  end
 end

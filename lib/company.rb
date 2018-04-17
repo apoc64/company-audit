@@ -52,4 +52,8 @@ class Company
     {success: false, error: 'bad data'}
   end
 
+  def find_employee_by_id(id)
+
+  end
+
 end
