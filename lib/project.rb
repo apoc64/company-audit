@@ -1,10 +1,9 @@
-require_relative '../modules/date_handler'
+# require_relative '../modules/date_handler'
 
 class Project
-  include DateHandler #directions didn't say we can't, rake works without this, not individual test file
+  # include DateHandler #directions didn't say we can't, rake works without this, not individual test file
   attr_reader :id,
               :name,
-              # :role,
               :start_date,
               :end_date
 
