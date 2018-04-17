@@ -81,7 +81,7 @@ class CompanyTest < Minitest::Test
 
   def test_it_can_return_employee_from_id
     company = Company.new
-    actual = company.load_employees('./data/bad_employees.csv')
+    actual = company.load_employees('./data/employees.csv')
     emp1 = company.find_employee_by_id(1)
     assert_instance_of Employee, emp1
     assert_equal "Susan Smith", emp1.name

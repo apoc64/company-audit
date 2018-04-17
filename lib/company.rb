@@ -53,7 +53,9 @@ class Company
   end
 
   def find_employee_by_id(id)
-
+    @employees.find do |employee|
+      employee.id == id
+    end
   end
 
 end
