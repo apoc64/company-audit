@@ -1,3 +1,7 @@
 class Audit
 
-end 
+  def load_company(company)
+    @company = company
+  end
+
+end
