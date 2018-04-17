@@ -93,4 +93,19 @@ class CompanyTest < Minitest::Test
     emp2 = company.find_employee_by_id(3)
     assert_nil emp2
   end
+
+  def test_it_can_return_project_from_id
+    company = Company.new
+    actual = company.load_projects('./data/projects.csv')
+    proj1 = company.find_project_by_id(1)
+    assert_instance_of Project, proj1
+    assert_equal "Widgets", proj1.name
+
+    proj2 = company.find_project_by_id(2)
+    assert_instance_of Project, proj2
+    assert_equal "More Widgets", proj2.name
+
+    proj3 = company.find_project_by_id(4)
+    assert_nil proj3
+  end
 end
