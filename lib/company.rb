@@ -1,5 +1,4 @@
 require 'csv'
-require 'pry'
 
 class Company
   attr_reader :employees,
@@ -63,5 +62,4 @@ class Company
       project.id == id
     end
   end
-
 end

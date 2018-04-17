@@ -41,11 +41,11 @@ class CompanyTest < Minitest::Test
   end
 
   def test_it_will_not_load_bad_project_data
-      company = Company.new
-      actual = company.load_projects('./data/bad_projects.csv')
-      expected = {success: false, error: 'bad data'}
-      assert_equal expected, actual
-      assert_equal [], company.projects
+    company = Company.new
+    actual = company.load_projects('./data/bad_projects.csv')
+    expected = {success: false, error: 'bad data'}
+    assert_equal expected, actual
+    assert_equal [], company.projects
   end
 
   def test_it_loads_timesheets
@@ -58,11 +58,11 @@ class CompanyTest < Minitest::Test
   end
 
   def test_it_will_not_load_bad_timesheet_data
-      company = Company.new
-      actual = company.load_timesheets('./data/bad_timesheets.csv')
-      expected = {success: false, error: 'bad data'}
-      assert_equal expected, actual
-      assert_equal [], company.timesheets
+    company = Company.new
+    actual = company.load_timesheets('./data/bad_timesheets.csv')
+    expected = {success: false, error: 'bad data'}
+    assert_equal expected, actual
+    assert_equal [], company.timesheets
   end
 
   def test_it_checks_validity
@@ -81,7 +81,7 @@ class CompanyTest < Minitest::Test
 
   def test_it_can_return_employee_from_id
     company = Company.new
-    actual = company.load_employees('./data/employees.csv')
+    company.load_employees('./data/employees.csv')
     emp1 = company.find_employee_by_id(1)
     assert_instance_of Employee, emp1
     assert_equal "Susan Smith", emp1.name
@@ -96,7 +96,7 @@ class CompanyTest < Minitest::Test
 
   def test_it_can_return_project_from_id
     company = Company.new
-    actual = company.load_projects('./data/projects.csv')
+    company.load_projects('./data/projects.csv')
     proj1 = company.find_project_by_id(1)
     assert_instance_of Project, proj1
     assert_equal "Widgets", proj1.name
@@ -108,6 +108,4 @@ class CompanyTest < Minitest::Test
     proj3 = company.find_project_by_id(4)
     assert_nil proj3
   end
-
-
 end

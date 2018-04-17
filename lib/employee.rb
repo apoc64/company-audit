@@ -1,4 +1,4 @@
-# require_relative '../modules/date_handler'
+require_relative '../modules/date_handler'
 
 class Employee
   include DateHandler #directions didn't say we can't use this, rake works without this, not individual test file
