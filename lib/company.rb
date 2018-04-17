@@ -1,3 +1,12 @@
 class Company
+  attr_reader :employees,
+              :projects,
+              :timesheets
 
-end 
+  def initialize
+    @employees = []
+    @projects = []
+    @timesheets = []
+  end
+
+end
