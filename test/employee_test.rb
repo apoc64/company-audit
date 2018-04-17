@@ -17,15 +17,15 @@ class EmployeeTest < Minitest::Test
   def test_attributes
     # skip
   # make sure to convert all ID values to integers
-  assert_instance_of Integer, @employee.id.class
+  assert_instance_of Integer, @employee.id
   # => Integer
   assert_equal "Sally Jackson", @employee.name
   # => "Sally Jackson"
   assert_equal "Engineer", @employee.role
   # => "Engineer"
-  assert_instance_of Time, @employee.start_date
+  assert_instance_of Date, @employee.start_date
   # => #<Date: 2015-01-01 ((2457024j,0s,0n),+0s,2299161j)>
-  assert_instance_of Time, @employee.end_date
+  assert_instance_of Date, @employee.end_date
   # => #<Date: 2018-01-01 ((2458120j,0s,0n),+0s,2299161j)>
   end
 end
