@@ -32,6 +32,16 @@ class Company
     {success: true, error: nil}
   end
 
+  def load_timesheets(filename)
+    records = CSV.read(filename)
+    return failure if !check_validity(records, 4)
+    records.each do |rec|
+      timesheet = Timesheet.new(rec[0], rec[1], rec[2], rec[3])
+      @timesheets << timesheet
+    end
+    {success: true, error: nil}
+  end
+
   def check_validity(records, count)
     records.all? do |record|
       record.length == count

@@ -48,6 +48,23 @@ class CompanyTest < Minitest::Test
       assert_equal [], company.projects
   end
 
+  def test_it_loads_timesheets
+    company = Company.new
+    actual = company.load_timesheets('./data/timesheets.csv')
+    expected = {success: true, error: nil}
+    assert_equal expected, actual
+    assert_equal 25, company.timesheets.count
+    assert_instance_of Timesheet, company.timesheets[0]
+  end
+
+  def test_it_will_not_load_bad_timesheet_data
+      company = Company.new
+      actual = company.load_timesheets('./data/bad_timesheets.csv')
+      expected = {success: false, error: 'bad data'}
+      assert_equal expected, actual
+      assert_equal [], company.timesheets
+  end
+
   def test_it_checks_validity
     company = Company.new
     good = [[1,2,3],[1,2,3]]
