@@ -1,7 +1,7 @@
 require_relative '../modules/date_handler'
 
 class Employee
-  include DateHandler
+  include DateHandler #directions didn't say we can't, rake works without this, not individual test file
   attr_reader :id,
               :name,
               :role,
