@@ -9,4 +9,7 @@ class Company
     @timesheets = []
   end
 
+  def load_employees(filename)
+
+  end
 end
