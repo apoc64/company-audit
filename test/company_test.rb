@@ -108,4 +108,6 @@ class CompanyTest < Minitest::Test
     proj3 = company.find_project_by_id(4)
     assert_nil proj3
   end
+
+
 end
