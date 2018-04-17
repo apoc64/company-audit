@@ -18,9 +18,10 @@ class CompanyTest < Minitest::Test
     company = Company.new
     actual = company.load_employees('./data/employees.csv')
     expected = {success: true, error: nil}
-    assert_equal expected, message
+    assert_equal expected, actual
     assert_equal 2, company.employees.count
     assert_instance_of Employee, company.employees[0]
+  end
     # Parameters: String
     # Returns: Hash
     # Read all data from filename in CSV format. Only add its contents to company.employees if ALL data in the file is valid. If any data is invalid, you should immediately return an error INSTEAD of saving the data. A test file for bad employee data has been provided.
@@ -31,5 +32,5 @@ class CompanyTest < Minitest::Test
     #
     # {success: true, error: nil}
     # {success: false, error: 'bad data'}
-  end
+
 end
